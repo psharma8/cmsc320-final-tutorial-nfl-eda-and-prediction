@@ -11,7 +11,7 @@ demo for one of my Data Science and Machine Learing class. I apply some data sci
 to do this stuff. In order to do it,first I needed to find the data that can be use for my purpose. I've found data 
 from github where author has uploaded play by play details of each games from 2009 to presents. the best part of this 
 data is they updated every nfl week and are in csv files which is easy to extract the information. All the procedures 
-I have done for this are file final_project.ipynb, you can walk through the code, prose and  comment to understand the
+I have done for this are file go_ravens.ipynb, you can walk through the code, prose and  comment to understand the
 more in detail. 
 
 I thought I would do this every week after data are updated on source file. Unfortunately, author has stopped updating
