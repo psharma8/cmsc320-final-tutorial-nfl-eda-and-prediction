@@ -11781,9 +11781,36 @@ div#notebook {
     </script>
     <!-- End of mathjax configuration --></head>
 <body>
+<h1>NFL data analysis and prediction of Ravens' chances for either Wild-card or Playoff</h1>
+<img src="nfl.png" alt="NFL" width="100%" height="333">
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+
+<pre><code>On 13th November 2018, I went to visit my family and friends in Baltimore. My friends and I were talking about NFL.
+</code></pre>
+<p>As most of us are Baltimore Ravens fans, we would love to see Ravens to win superbowl again. However, our team is 
+not doing very this season. Some of the friends think that Ravens will be done by end of the regular season and will
+not play the any further for these season. In contrast to those friends, there are other friends including me who
+think that Ravens still can get to playoff even though they will not be group division champion, Ravens still have
+chances to make it through wild card entry.
+    Two or three days later, I decided to predict whether Ravens will actually make it to the playoff or wild card entry
+by the end of the month so I can show the result of prediction to my friends and tell them what will more likely to 
+happend by the end of the regular season. Addition to showing this result to my friends, I can use is as my project 
+demo for one of my Data Science and Machine Learing class. I apply some data science and machine learning technique 
+to do this stuff. In order to do it,first I needed to find the data that can be use for my purpose. I've found data 
+from github where author has uploaded play by play details of each games from 2009 to presents. the best part of this 
+data is they updated every nfl week and are in csv files which is easy to extract the information. All the procedures 
+I have done for this are file go_ravens.ipynb, you can walk through the code, prose and  comment to understand the
+more in detail.</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -11800,7 +11827,7 @@ from 2009 to 2017 and part of 2018 that are played</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[109]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Libraries and classes that are going to be used through out the project</span>
@@ -11826,7 +11853,7 @@ from 2009 to 2017 and part of 2018 that are played</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[110]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">file_str</span> <span class="o">=</span> <span class="s1">&#39;regular_season/reg_pbp_&#39;</span>
@@ -11889,7 +11916,7 @@ from 2009 to 2017 and part of 2018 that are played</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[110]:</div>
+<div class="prompt output_prompt">Out[24]:</div>
 
 
 
@@ -12074,21 +12101,21 @@ from 2009 to 2017 and part of 2018 that are played</p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Data Wrangling Part(1) : <br>
 --------------------------------- <br>
-Data we collect contains play by play details (Dirty Date) which cannot be used until <br> 
+Data we collect contains play by play details (Dirty Data) which cannot be used until <br> 
 we process the data and make it tidy and usable <br>
 After wrangling process we will have only two rows for each game with all necessary detail of each team who <br>
 played game against each other. It will reduce the number of multiple rows into two rows and make it more easier to <br>
 use, read and visualize the data.<br>
 During this wrangling process we create two new dataframes <br>
 df      :  for ploting and analyzing data <br>
-pred_df : dataframe is for prediction of future using logistic regression <br></p>
+pred_df : dataframe is for prediction of future games using logistic regression <br></p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[111]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># col_names contains columns for which we are going to get values for each team from </span>
@@ -12212,7 +12239,7 @@ pred_df : dataframe is for prediction of future using logistic regression <br></
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[111]:</div>
+<div class="prompt output_prompt">Out[25]:</div>
 
 
 
@@ -12374,7 +12401,7 @@ each team into one row so we will have data where each row contains information 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[112]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">summary_list</span> <span class="o">=</span> <span class="p">[]</span>
@@ -12421,7 +12448,7 @@ each team into one row so we will have data where each row contains information 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[112]:</div>
+<div class="prompt output_prompt">Out[26]:</div>
 
 
 
@@ -12577,7 +12604,7 @@ each team into one row so we will have data where each row contains information 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[113]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># count-plot of total number of away game wins by team in general during (2009 to 2018)</span>
@@ -12594,13 +12621,13 @@ each team into one row so we will have data where each row contains information 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[113]:</div>
+<div class="prompt output_prompt">Out[27]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x151bbfed630&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x240832f4828&gt;</pre>
 </div>
 
 </div>
@@ -12635,7 +12662,7 @@ each team into one row so we will have data where each row contains information 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[114]:</div>
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># # count-plot of total number of home game wins by team in general during (2009 to 2018)</span>
@@ -12652,13 +12679,13 @@ each team into one row so we will have data where each row contains information 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[114]:</div>
+<div class="prompt output_prompt">Out[28]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x151bbef3588&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x240827d7a90&gt;</pre>
 </div>
 
 </div>
@@ -12691,9 +12718,20 @@ each team into one row so we will have data where each row contains information 
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><br><br>
+in next step, the data is standardized so all value we have for away-win, home-win, tie, lose are in ratio to total games <br>
+while all other values of each columns are the average (the total / total games played).<br><br></p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[115]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Get weighted score for each column using the ratio</span>
@@ -12753,7 +12791,7 @@ each team into one row so we will have data where each row contains information 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[115]:</div>
+<div class="prompt output_prompt">Out[29]:</div>
 
 
 
@@ -12909,7 +12947,7 @@ each team into one row so we will have data where each row contains information 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[116]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">X</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;completion_ratio&#39;</span><span class="p">]</span>
@@ -12993,14 +13031,14 @@ each team into one row so we will have data where each row contains information 
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Between the completion ratio and total scores, and between the completion ratio and win ratio  have positive relations which 
-means the team with a quarterback who can throw ball more accurately has more chance to get better scores and win more games.</p>
+means the team with a quarterback who can throw ball more accurately has more chance to get better scores as well as to win <br> more games.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[117]:</div>
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">X</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;penalty_ratio&#39;</span><span class="p">]</span>
@@ -13045,14 +13083,14 @@ means the team with a quarterback who can throw ball more accurately has more ch
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>I expected to have some opposite (negative) correlation between penalty yards conceded and winning the. However, when I did the  scatter plot and fit regression line, the regression line is horizontal (very close) which means that there is no relation betwween these two factors.</p>
+<p>I expected to have some opposite (negative) correlation between penalty yards conceded and winning the. However, when I did the  scatter plot and fit regression line, the regression line is horizontal (almost) which means that there is no relation betwween these two factors.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[118]:</div>
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_train</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">2018</span><span class="p">)]</span>
@@ -13109,7 +13147,7 @@ means the team with a quarterback who can throw ball more accurately has more ch
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Dots on line represent that the team won superbowl in that year. It seems teams with winning ratio close to or greater than 75% are more likely to win super bowl. the only one team, New York Giant, was able to win the superbowl with winning ratio less than 60%. It's very unlikely to win thw superbowl if the team has won less than 60% of total games in regular seasons(16 games). New England Patriots is the only one team who won superbowls more than once and also  only superbowl winning team whose 
+<p>Dots on line represent that the team won superbowl in that year. It seems teams with winning ratio close to or greater than 75% are more likely to win super bowl. the only one team, New York Giant, was able to win the superbowl with winning ratio less than 60%. It's very unlikely to win the superbowl if the team has won less than 60% of total games in regular seasons(16 games). New England Patriots is the only one team who won superbowls more than once and also  only superbowl winning team whose 
 winning ratio over time is more consistent than any other team.</p>
 
 </div>
@@ -13117,7 +13155,7 @@ winning ratio over time is more consistent than any other team.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[119]:</div>
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
@@ -13186,13 +13224,15 @@ Libraries from sklearn is used to get prediction <br>
 Inependent Variables are (X) : <br>
 home-team <br>
 away-team <br>
-home game win ratio (total home game wins / total games played) of home team <br>
+home game win to total games played ratio (total home game wins / total games played) of home team <br>
 average total scores (total scores / total games played) of home game <br>
-away game win ratio (total away game wins / total games played) of away team <br>
+away game win to total games played ratio (total away game wins / total games played) of away team <br>
 average total scores (total scores / total games played) of away team <br>
 <br>
 Dependent Variable (Y) : <br>
-home team win (binary if home win then 1 else 0)  here a chance of draw is ignored here <br>
+home team win (binary if home win then 1 else 0)  here a chance of draw is ignored, and count it as 0. It's very <br>
+unlikely to have draw and therefore winning is more important to get to the playoff or wildcard round. Hence, we are <br>
+only interested to figure out whether team win or lose (draw is counted as lose)<br>
 <br><br>
 Now we are going to add more information to dataframe for prediction (pred_df) which we created <br>
 in Data Wrangling Part 1</p>
@@ -13202,7 +13242,7 @@ in Data Wrangling Part 1</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[120]:</div>
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># col_names=[&#39;year&#39;,&#39;home_team&#39;,&#39;away_team&#39;,&#39;home_win_team&#39;,&#39;avg_ht_hw&#39;,&#39;avg_at_aw&#39;,&#39;avg&#39;]</span>
@@ -13248,7 +13288,7 @@ in Data Wrangling Part 1</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[120]:</div>
+<div class="prompt output_prompt">Out[34]:</div>
 
 
 
@@ -13354,18 +13394,27 @@ in Data Wrangling Part 1</p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>$$ Column-Name \space Detail  $$
 <br>
-avg_home_win_ht : average home win for home team <br>
+avg_home_win_ht : total home game win / total games played for home team <br>
 avg_total_scores_ht : average total scores per game for home team <br>
-avg_away_win_at : average away win for away team <br>
+avg_away_win_at : total away win / total games played for away team <br>
 avg_total_scores_at : average total scores for away team <br>
 home_team_win : if home team win then 1 else 0</p>
 
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In next step, we are training logistic regression model using our data so we can use it to predict future games (week 12)</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[121]:</div>
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_df</span><span class="o">=</span><span class="n">new_pred_df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
@@ -13419,7 +13468,7 @@ home_team_win : if home team win then 1 else 0</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[122]:</div>
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="n">predictions</span><span class="p">))</span>
@@ -13456,7 +13505,7 @@ avg / total       0.75      0.75      0.75       813
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[123]:</div>
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="n">predictions</span><span class="p">)</span>
@@ -13472,7 +13521,7 @@ avg / total       0.75      0.75      0.75       813
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[123]:</div>
+<div class="prompt output_prompt">Out[37]:</div>
 
 
 
@@ -13491,14 +13540,23 @@ avg / total       0.75      0.75      0.75       813
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The accuracy score is 72.257% which is not bad, but not the best either.</p>
+<p>The above score is accuracy score wich means the prediction we get is (score value) * 100% chance that the prediction is right.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now we use the above trained logistic regression model to find the result of future games for Ravens.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[124]:</div>
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">p_df</span><span class="o">=</span><span class="n">new_pred_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">new_pred_df</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2018</span><span class="p">)]</span>
@@ -13543,7 +13601,7 @@ avg / total       0.75      0.75      0.75       813
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[124]:</div>
+<div class="prompt output_prompt">Out[38]:</div>
 
 
 
@@ -13649,7 +13707,7 @@ avg / total       0.75      0.75      0.75       813
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[125]:</div>
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_df</span><span class="o">=</span><span class="n">new_pred_df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
@@ -13681,7 +13739,7 @@ avg / total       0.75      0.75      0.75       813
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[125]:</div>
+<div class="prompt output_prompt">Out[39]:</div>
 
 
 
@@ -13779,7 +13837,7 @@ main quarterback Joe Flacco have been out due to injury and since then Baltimore
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[126]:</div>
+<div class="prompt input_prompt">In&nbsp;[40]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">p_df</span><span class="o">=</span><span class="n">new_pred_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">new_pred_df</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2018</span><span class="p">)]</span>
@@ -13823,7 +13881,7 @@ main quarterback Joe Flacco have been out due to injury and since then Baltimore
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[127]:</div>
+<div class="prompt input_prompt">In&nbsp;[41]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_df</span><span class="o">=</span><span class="n">new_pred_df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
@@ -13864,7 +13922,7 @@ main quarterback Joe Flacco have been out due to injury and since then Baltimore
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[128]:</div>
+<div class="prompt input_prompt">In&nbsp;[42]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_data</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
@@ -13880,7 +13938,7 @@ main quarterback Joe Flacco have been out due to injury and since then Baltimore
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[128]:</div>
+<div class="prompt output_prompt">Out[42]:</div>
 
 
 
@@ -14038,13 +14096,13 @@ total wins so far <br>
 are presented below : <br></p>
 <p><pre> Team                          Wins    </pre></p>
 <p><pre>              after-week-11        after-week-12-prediction </pre></p>
-<p><pre> <b>Ravens           5                          6              </pre></p>
-<p><pre> <b>Bangles          5                          6              </pre></p>
-<p><pre> <b>Chargers         7                          8              </pre></p>
+<p><pre> Ravens           5                          6              </pre></p>
+<p><pre> Bangles          5                          6              </pre></p>
+<p><pre> Chargers         7                          8              </pre></p>
 <p><pre> Dolphins         5                          5              </pre></p>
 <p><pre> Titans           5                          5              </pre></p>
-<p><pre> <b>Colts            5                          6               </pre>
-Teams with bold letters will be in wild card hunt after week 12.</p>
+<p><pre> Colts            5                          6               </pre>
+Teams Ravens,Bangles,Chargers, and Colts will be in wild card hunt after week 12.</p>
 <p>So after week 12, Ravens,Bangles,Chargers,and Colts will compete for wild card entry;however, <br>
 according to our previous prediction of Baltimore's future games, Baltimore will lose game against <br>
 Chargers. Since Chargers will have at least 9 wins Chargers will be ahead of Ravens by the end of the <br>
@@ -14053,13 +14111,14 @@ Charger to find out if Ravens is more likey to qualify for wild card round. The 
 compete for wild card round after week 12 predictions are Bangles, and Colts. To find out whether Ravens will<br>
 qualify for wild round or not we do prediction of futures games of Bangles and Colts in next section and see <br>
 what happens <br><br>
-Updated after week 12 :
+Updated after week 12 games were played:
 9 out of 15 games were predicted correctly. <br>
 I've found one more interesting thing about prediction. <br>
 prediction for 6 games that are wrong, 3 winning teams win the game leading by only 3 points. <br>
 On the other hand, 8 out of those 9 correctly predicted games  win the game leading by at least 7 points. <br>
 <br>
-Above the model said accuracy_score is 75.15% (0.7515375153751538), and the result I've got is 60% (9/15) accurate.
+Above the model said accuracy_score is 75.15% (0.7515375153751538), and the result I've got is 60% (9/15) accurate.<br>
+Note : the accuracy_score may vary due to update on data set in next coming date
 <br><br>
 Predict the results of next coming games of Bangles and Colts using above model with similar technique we used for<br>
 Ravens <br></p>
@@ -14069,7 +14128,7 @@ Ravens <br></p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[129]:</div>
+<div class="prompt input_prompt">In&nbsp;[43]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># future games prediction of Colts</span>
@@ -14134,7 +14193,7 @@ Ravens <br></p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[129]:</div>
+<div class="prompt output_prompt">Out[43]:</div>
 
 
 
@@ -14224,7 +14283,7 @@ Ravens <br></p>
 <p>According to the above prediction,after week 11, Colts will win 5 out of 6 games which means they will have<br>
 total 10 wins by the end of the regular season. From previous and this predictions, we can see that by the <br>
 end of the regular season Ravens will be behind Chargers and Colts. There is still some chance for ravens to <br>
-get to the wild card entry for that we need look prediction of future games of the Texas. <br>
+get to the wild card entry for that we need to predic the result of future games for the Texas. <br>
 <br>
 So in next section I have table of prediction of future games of Houston Texas from week 12 to week 17</p>
 
@@ -14233,7 +14292,7 @@ So in next section I have table of prediction of future games of Houston Texas f
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[130]:</div>
+<div class="prompt input_prompt">In&nbsp;[44]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># future games prediction of Colts</span>
@@ -14298,7 +14357,7 @@ So in next section I have table of prediction of future games of Houston Texas f
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[130]:</div>
+<div class="prompt output_prompt">Out[44]:</div>
 
 
 
@@ -14386,7 +14445,7 @@ So in next section I have table of prediction of future games of Houston Texas f
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>By looking at the table of Houston games prediction, we can clearly say that Houston Texas are more likely to win all of <br>
-their coming games and their total wins by the end of the week 11 is 7.<br>
+their coming games and their total wins by the end of the week 11 is 7 so even if they win only two more games they will <br> have more wins (9) than Ravens (8) by the end of the regular season, but they are likely to win all upcoming games.<br>
 <br><br></p>
 <p>From all this predictions and analysis, we can say that : <br>
 By the end of the regular season, Baltimore Ravens will not finish as group division chapions (top team of the AFC North) <br>
@@ -14425,6 +14484,7 @@ sklearn : Logistic Regression , Accuracy measurement of prediction</p>
 </div>
     </div>
   </div>
+  <img src="ravens.png" alt="NFL" width="100%" height="333">
 </body>
 
  
